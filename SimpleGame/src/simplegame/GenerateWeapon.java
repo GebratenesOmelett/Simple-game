@@ -4,10 +4,7 @@
  */
 package simplegame;
 
-/**
- *
- * @author Aleksy
- */
+
 public class GenerateWeapon {
     Double randomWeapon = Math.random();
     

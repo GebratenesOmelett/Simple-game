@@ -4,10 +4,7 @@
  */
 package simplegame;
 
-/**
- *
- * @author Aleksy
- */
+
 public class GenerateStats{
     int GenerateStatsAttacl(int minAttack, int maxAttack){
         int randomAttack = (int)Math.floor(Math.random() * (maxAttack - minAttack + 1) + minAttack);

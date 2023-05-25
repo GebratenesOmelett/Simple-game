@@ -4,10 +4,7 @@
  */
 package simplegame;
 
-/**
- *
- * @author Aleksy
- */
+
 public class Skeleton extends monsters{
 
     @Override
