@@ -14,8 +14,13 @@ public class SimpleGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        int random_int = (int)Math.floor(Math.random() * (15 - 2 + 1) + 2);
+        
+        monsters newmonster = new Skeleton();
+        newmonster.basicStats();
+        newmonster.weapon();
+        System.out.println(newmonster.ap);
     }
+    
     
 }
 abstract class monsters{

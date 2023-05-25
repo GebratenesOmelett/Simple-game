@@ -9,15 +9,15 @@ package simplegame;
  * @author Aleksy
  */
 public class GenerateStats{
-    public int GenerateStatsAttacl(int minAttack, int maxAttack){
+    int GenerateStatsAttacl(int minAttack, int maxAttack){
         int randomAttack = (int)Math.floor(Math.random() * (maxAttack - minAttack + 1) + minAttack);
         return randomAttack;
     }
-    public int GenerateStatsDefence(int minDefence, int maxDefence){
+    int GenerateStatsDefence(int minDefence, int maxDefence){
         int randomDefence = (int)Math.floor(Math.random() * (maxDefence - minDefence + 1) + minDefence);
         return randomDefence;
     }
-    public int GenerateStatsHealth(int minHealth, int maxHealth){
+    int GenerateStatsHealth(int minHealth, int maxHealth){
         int randomHealth = (int)Math.floor(Math.random() * (maxHealth - minHealth + 1) + minHealth);
         return randomHealth;
     }

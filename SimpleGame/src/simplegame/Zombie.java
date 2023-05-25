@@ -8,17 +8,14 @@ package simplegame;
  *
  * @author Aleksy
  */
-public class Skeleton extends monsters{
+public class Zombie extends monsters{
 
     @Override
     protected void basicStats() {
         GenerateStats generatedStaus = new GenerateStats();
-        this.ap = generatedStaus.GenerateStatsAttacl(10, 15);
-        System.out.println(this.ap + " to jest bazowy atak");
-        this.def = generatedStaus.GenerateStatsDefence(1, 5);
-        this.hp = generatedStaus.GenerateStatsHealth(1, 5);
-        
-        
+        this.ap = generatedStaus.GenerateStatsAttacl(1, 5);
+        this.def = generatedStaus.GenerateStatsDefence(10, 15);
+        this.hp = generatedStaus.GenerateStatsHealth(10, 15);
     }
 
     @Override
@@ -28,9 +25,7 @@ public class Skeleton extends monsters{
 
     @Override
     protected void weapon() {
-       GenerateWeapon weapon = new GenerateWeapon();
-       this.ap += weapon.GenerateWeapon();
-       System.out.println(this.ap + " to jest bazowa broń");
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 }
