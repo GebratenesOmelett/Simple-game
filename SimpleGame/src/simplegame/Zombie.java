@@ -25,7 +25,7 @@ public class Zombie extends monsters{
 
     @Override
     protected void weapon() {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
-    }
-    
+       GenerateWeapon weapon = new GenerateWeapon();
+       this.ap += weapon.GenerateWeapon();       
+    } 
 }

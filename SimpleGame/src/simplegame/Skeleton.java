@@ -14,7 +14,6 @@ public class Skeleton extends monsters{
     protected void basicStats() {
         GenerateStats generatedStaus = new GenerateStats();
         this.ap = generatedStaus.GenerateStatsAttacl(10, 15);
-        System.out.println(this.ap + " to jest bazowy atak");
         this.def = generatedStaus.GenerateStatsDefence(1, 5);
         this.hp = generatedStaus.GenerateStatsHealth(1, 5);
         
@@ -29,8 +28,7 @@ public class Skeleton extends monsters{
     @Override
     protected void weapon() {
        GenerateWeapon weapon = new GenerateWeapon();
-       this.ap += weapon.GenerateWeapon();
-       System.out.println(this.ap + " to jest bazowa broń");
+       this.ap += weapon.GenerateWeapon();       
     }
     
 }
