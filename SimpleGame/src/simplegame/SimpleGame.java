@@ -14,7 +14,7 @@ public class SimpleGame {
         monsters[] listOfMonsters;
         listOfMonsters = randomMonster.monsterDraw(); 
         for(monsters myEnemy : listOfMonsters){
-            System.out.println(myEnemy.description());
+            System.out.println(myEnemy.description()); //write every generated monsters
         }
     }
     
