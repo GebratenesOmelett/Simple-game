@@ -4,12 +4,6 @@
  */
 package simplegame;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 
 public class SimpleGame {
 
@@ -20,7 +14,7 @@ public class SimpleGame {
         monsters[] listOfMonsters;
         listOfMonsters = randomMonster.monsterDraw(); 
         for(monsters myEnemy : listOfMonsters){
-            System.out.println(myEnemy.ap);
+            System.out.println(myEnemy.description());
         }
     }
     
@@ -61,9 +55,7 @@ class randomMonster{
             newZombies[x].weapon();
         }
         
-        minusMonsters = (int)Math.floor(Math.random() * (maxMonsters + 1));
-        maxMonsters -= minusMonsters;
-        monsters[] newRats = new Rat[minusMonsters];
+        monsters[] newRats = new Rat[maxMonsters];
         for(int x = 0; x < newRats.length; x++){
             newRats[x] = new Rat();
             newRats[x].basicStats();
@@ -73,10 +65,11 @@ class randomMonster{
         
         monsters[] allMonsters = new monsters[newSkeletons.length + newZombies.length + newRats.length];
         System.arraycopy(newSkeletons, 0, allMonsters, 0, newSkeletons.length);
-        System.arraycopy(newZombies, 0, allMonsters, 0, newZombies.length);
-        System.arraycopy(newRats, 0, allMonsters, 0, newRats.length);
+        System.arraycopy(newZombies, 0, allMonsters, newSkeletons.length, newZombies.length);
+        System.arraycopy(newRats, 0, allMonsters, newSkeletons.length + newZombies.length, newRats.length);
         return allMonsters;
     }
+
 }
 
     
