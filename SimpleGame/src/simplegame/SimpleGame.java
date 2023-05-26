@@ -11,6 +11,7 @@ public class SimpleGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+        System.out.println(randomMonster.lengthGame);
         
         monsters newmonster = new Skeleton();
         newmonster.basicStats();
@@ -28,6 +29,30 @@ abstract class monsters{
     protected abstract void attack();
     protected abstract void weapon();
 }
+
+
+class randomMonster{
+    public final static int lengthGame = 10;
+    int[] amountMonsters = new int[lengthGame];
+    
+    
+    int monsterDraw(){
+        for(int x = 0; x < lengthGame; x++){
+            Double monsterRandom = Math.random();
+            if(monsterRandom >= 0.7){
+            }
+            else if(monsterRandom >= 0.4 && monsterRandom < 0.7){
+            return 5; //stick
+            }
+            return 1; //fist
+        }
+        return 0;
+    }
+}
+
+    
+
+
 
     
 
