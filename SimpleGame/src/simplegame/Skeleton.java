@@ -27,5 +27,10 @@ public class Skeleton extends monsters{
        GenerateWeapon weapon = new GenerateWeapon();
        this.ap += weapon.GenerateWeapon();       
     }
+
+    @Override
+    protected String description() {
+        return "Skeleton";
+    }
     
 }

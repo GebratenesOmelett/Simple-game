@@ -26,4 +26,9 @@ public class Rat extends monsters{
         this.ap += weapon.GenerateWeapon();  
     }
     
+    @Override
+    protected String description() {
+        return "Rat";
+    }
+    
 }

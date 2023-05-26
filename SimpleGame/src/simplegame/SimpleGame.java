@@ -4,6 +4,12 @@
  */
 package simplegame;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 
 public class SimpleGame {
 
@@ -11,12 +17,11 @@ public class SimpleGame {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        System.out.println(randomMonster.lengthGame);
-        
-        monsters newmonster = new Skeleton();
-        newmonster.basicStats();
-        newmonster.weapon();
-        System.out.println(newmonster.ap);
+        monsters[] listOfMonsters;
+        listOfMonsters = randomMonster.monsterDraw(); 
+        for(monsters myEnemy : listOfMonsters){
+            System.out.println(myEnemy.ap);
+        }
     }
     
     
@@ -28,25 +33,49 @@ abstract class monsters{
     protected abstract void basicStats();
     protected abstract void attack();
     protected abstract void weapon();
+    protected abstract String description();
 }
 
 
 class randomMonster{
     public final static int lengthGame = 10;
-    int[] amountMonsters = new int[lengthGame];
-    
-    
-    int monsterDraw(){
-        for(int x = 0; x < lengthGame; x++){
-            Double monsterRandom = Math.random();
-            if(monsterRandom >= 0.7){
-            }
-            else if(monsterRandom >= 0.4 && monsterRandom < 0.7){
-            return 5; //stick
-            }
-            return 1; //fist
+    public static int[] amountMonsters = new int[lengthGame];
+    static int maxMonsters = lengthGame;
+   
+    public static monsters[] monsterDraw(){
+        int minusMonsters = (int)Math.floor(Math.random() * (maxMonsters + 1));
+        maxMonsters -= minusMonsters;
+        monsters[] newSkeletons = new Skeleton[minusMonsters];
+        for(int x = 0; x < newSkeletons.length; x++){
+            newSkeletons[x] = new Skeleton();
+            newSkeletons[x].basicStats();
+            newSkeletons[x].weapon();
         }
-        return 0;
+     
+        minusMonsters = (int)Math.floor(Math.random() * (maxMonsters + 1));
+        maxMonsters -= minusMonsters;
+        monsters[] newZombies = new Zombie[minusMonsters];
+        for(int x = 0; x < newZombies.length; x++){
+            newZombies[x] = new Zombie();
+            newZombies[x].basicStats();
+            newZombies[x].weapon();
+        }
+        
+        minusMonsters = (int)Math.floor(Math.random() * (maxMonsters + 1));
+        maxMonsters -= minusMonsters;
+        monsters[] newRats = new Rat[minusMonsters];
+        for(int x = 0; x < newRats.length; x++){
+            newRats[x] = new Rat();
+            newRats[x].basicStats();
+            newRats[x].weapon();
+        }
+        
+        
+        monsters[] allMonsters = new monsters[newSkeletons.length + newZombies.length + newRats.length];
+        System.arraycopy(newSkeletons, 0, allMonsters, 0, newSkeletons.length);
+        System.arraycopy(newZombies, 0, allMonsters, 0, newZombies.length);
+        System.arraycopy(newRats, 0, allMonsters, 0, newRats.length);
+        return allMonsters;
     }
 }
 
