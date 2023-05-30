@@ -14,20 +14,45 @@ public class SimpleGame {
         monsters[] listOfMonsters;
         listOfMonsters = randomMonster.monsterDraw(); 
         for(monsters myEnemy : listOfMonsters){
-            System.out.println(myEnemy.description()); //write every generated monsters
+            System.out.println(myEnemy); //write every generated monsters
         }
     }
     
     
 }
 abstract class monsters{
-    protected int ap;
-    protected int hp;
-    protected int def;
+    private int ap;
+    private int hp;
+    private int def;
     protected abstract void basicStats();
     protected abstract void attack();
     protected abstract void weapon();
     protected abstract String description();
+
+
+    public int getAp() {
+        return ap;
+    }
+
+    public void setAp(int ap) {
+        this.ap = ap;
+    }
+
+    public int getHp() {
+        return hp;
+    }
+
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public int getDef() {
+        return def;
+    }
+
+    public void setDef(int def) {
+        this.def = def;
+    }
 }
 
 

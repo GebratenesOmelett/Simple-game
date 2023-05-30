@@ -10,9 +10,9 @@ public class Rat extends monsters{
     @Override
     protected void basicStats() {
         GenerateStats generatedStaus = new GenerateStats();
-        this.ap = generatedStaus.GenerateStatsAttacl(5, 10);
-        this.def = generatedStaus.GenerateStatsDefence(5, 10);
-        this.hp = generatedStaus.GenerateStatsHealth(5, 10);
+        this.setAp(generatedStaus.GenerateStatsAttacl(5, 10));
+        this.setDef(generatedStaus.GenerateStatsDefence(5, 10));
+        this.setHp(generatedStaus.GenerateStatsHealth(5, 10));
     }
 
     @Override
@@ -23,11 +23,16 @@ public class Rat extends monsters{
     @Override
     protected void weapon() {
         GenerateWeapon weapon = new GenerateWeapon();
-        this.ap += weapon.GenerateWeapon();  
+        this.setAp(this.getAp() + weapon.GenerateWeapon());
     }
     
     @Override
     protected String description() {
+        return "Rat";
+    }
+
+    @Override
+    public String toString(){
         return "Rat";
     }
     

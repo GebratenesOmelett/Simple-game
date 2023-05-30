@@ -10,9 +10,9 @@ public class Skeleton extends monsters{
     @Override
     protected void basicStats() {
         GenerateStats generatedStaus = new GenerateStats();
-        this.ap = generatedStaus.GenerateStatsAttacl(10, 15);
-        this.def = generatedStaus.GenerateStatsDefence(1, 5);
-        this.hp = generatedStaus.GenerateStatsHealth(1, 5);
+        this.setAp(generatedStaus.GenerateStatsAttacl(10, 15));
+        this.setDef(generatedStaus.GenerateStatsDefence(1, 5));
+        this.setHp(generatedStaus.GenerateStatsHealth(1, 5));
         
         
     }
@@ -25,7 +25,7 @@ public class Skeleton extends monsters{
     @Override
     protected void weapon() {
        GenerateWeapon weapon = new GenerateWeapon();
-       this.ap += weapon.GenerateWeapon();       
+       this.setAp(this.getAp() + weapon.GenerateWeapon());
     }
 
     @Override

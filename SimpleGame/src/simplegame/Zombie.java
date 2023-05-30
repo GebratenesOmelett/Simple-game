@@ -10,9 +10,9 @@ public class Zombie extends monsters{
     @Override
     protected void basicStats() {
         GenerateStats generatedStaus = new GenerateStats();
-        this.ap = generatedStaus.GenerateStatsAttacl(1, 5);
-        this.def = generatedStaus.GenerateStatsDefence(10, 15);
-        this.hp = generatedStaus.GenerateStatsHealth(10, 15);
+        this.setAp(generatedStaus.GenerateStatsAttacl(1, 5));
+        this.setDef(generatedStaus.GenerateStatsDefence(10, 15));
+        this.setHp(generatedStaus.GenerateStatsHealth(10, 15));
     }
 
     @Override
@@ -23,7 +23,7 @@ public class Zombie extends monsters{
     @Override
     protected void weapon() {
        GenerateWeapon weapon = new GenerateWeapon();
-       this.ap += weapon.GenerateWeapon();       
+        this.setAp(this.getAp() + weapon.GenerateWeapon());
     } 
 
     @Override
