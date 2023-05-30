@@ -25,11 +25,6 @@ public class Rat extends monsters{
         GenerateWeapon weapon = new GenerateWeapon();
         this.setAp(this.getAp() + weapon.GenerateWeapon());
     }
-    
-    @Override
-    protected String description() {
-        return "Rat";
-    }
 
     @Override
     public String toString(){

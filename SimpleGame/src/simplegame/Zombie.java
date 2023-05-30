@@ -26,8 +26,10 @@ public class Zombie extends monsters{
         this.setAp(this.getAp() + weapon.GenerateWeapon());
     } 
 
+
     @Override
-    protected String description() {
+    public String toString(){
         return "Zombie";
     }
+
 }

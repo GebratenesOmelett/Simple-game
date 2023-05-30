@@ -29,8 +29,8 @@ public class Skeleton extends monsters{
     }
 
     @Override
-    protected String description() {
-        return "Skeleton";
+    public String toString(){
+        return "Skieleton";
     }
-    
+
 }

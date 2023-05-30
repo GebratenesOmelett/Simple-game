@@ -27,9 +27,6 @@ abstract class monsters{
     protected abstract void basicStats();
     protected abstract void attack();
     protected abstract void weapon();
-    protected abstract String description();
-
-
     public int getAp() {
         return ap;
     }
