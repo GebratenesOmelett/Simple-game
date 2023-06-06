@@ -20,13 +20,18 @@ public class SimpleGame {
     
     
 }
-abstract class monsters{
+interface monsters{
+
+    void basicStats();
+    void attack();
+    void weapon();
+
+}
+class monstersStatsInfo{
     private int ap;
     private int hp;
     private int def;
-    protected abstract void basicStats();
-    protected abstract void attack();
-    protected abstract void weapon();
+
     public int getAp() {
         return ap;
     }

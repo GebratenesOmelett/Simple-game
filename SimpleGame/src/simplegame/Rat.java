@@ -5,10 +5,10 @@
 package simplegame;
 
 
-public class Rat extends monsters{
+public class Rat extends monstersStatsInfo implements monsters{
 
     @Override
-    protected void basicStats() {
+    public void basicStats() {
         GenerateStats generatedStaus = new GenerateStats();
         this.setAp(generatedStaus.GenerateStatsAttacl(5, 10));
         this.setDef(generatedStaus.GenerateStatsDefence(5, 10));
@@ -16,12 +16,12 @@ public class Rat extends monsters{
     }
 
     @Override
-    protected void attack() {
+    public void attack() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    protected void weapon() {
+    public void weapon() {
         GenerateWeapon weapon = new GenerateWeapon();
         this.setAp(this.getAp() + weapon.GenerateWeapon());
     }

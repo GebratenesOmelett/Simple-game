@@ -5,10 +5,10 @@
 package simplegame;
 
 
-public class Zombie extends monsters{
+public class Zombie extends monstersStatsInfo implements monsters{
 
     @Override
-    protected void basicStats() {
+    public void basicStats() {
         GenerateStats generatedStaus = new GenerateStats();
         this.setAp(generatedStaus.GenerateStatsAttacl(1, 5));
         this.setDef(generatedStaus.GenerateStatsDefence(10, 15));
@@ -16,12 +16,12 @@ public class Zombie extends monsters{
     }
 
     @Override
-    protected void attack() {
+    public void attack() {
         throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     @Override
-    protected void weapon() {
+    public void weapon() {
        GenerateWeapon weapon = new GenerateWeapon();
         this.setAp(this.getAp() + weapon.GenerateWeapon());
     } 
